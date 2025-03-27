@@ -5,9 +5,8 @@
             <!-- site logo -->
             <a class="nav-logo p-0" href="{{ route('home') }}"><img src="assets/images/Logo.png" alt="logo"></a>
             <!-- navigation button  -->
-            <button class="navbar-toggle"
-                onclick="if (!window.__cfRLUnblockHandlers) return false; openNav()" type="button"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            <button class="navbar-toggle" onclick="if (!window.__cfRLUnblockHandlers) return false; openNav()"
+                type="button" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -16,17 +15,19 @@
                 <ul
                     class="navbar-nav d-flex justify-content-center align-items-center gap-lg-2 gap-md-2 gap-sm-2 gap-2 mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('home') }}">Home</a>
+                        <a class="nav-link {{ \Illuminate\Support\Facades\Route::is('home') ? 'active' : '' }}"
+                            href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('about') }}">About us</a>
+                        <a class="nav-link {{ \Illuminate\Support\Facades\Route::is('about') ? 'active' : '' }}"
+                            href="{{ route('about') }}">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('feature') }}">Feature</a>
+                        <a class="nav-link {{ \Illuminate\Support\Facades\Route::is('feature') ? 'active' : '' }}"
+                            href="{{ route('feature') }}">Feature</a>
                     </li>
                     <li class="dropdown">
-                        <a class="nav-link " href="#">Pages <i
-                                class="fa-sharp fa-solid fa-sort-down"></i></a>
+                        <a class="nav-link" href="#">Pages <i class="fa-sharp fa-solid fa-sort-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('pricing') }}">Pricing</a></li>
                             <li><a class="dropdown-item" href="{{ route('contact') }}">Contact</a></li>
@@ -45,8 +46,7 @@
                     <li class="nav-item header_btn ">
                         <a class="nav-link nav-hrf btn-hover1" href="#">Create Account</a>
                     </li>
-                    <li class="nav-item"
-                        onclick="if (!window.__cfRLUnblockHandlers) return false; open_right_side()">
+                    <li class="nav-item" onclick="if (!window.__cfRLUnblockHandlers) return false; open_right_side()">
                         <a class="nav-link" href="#"><i class="fa-sharp fa-solid fa-bars"></i></a>
                     </li>
                 </ul>
@@ -65,16 +65,20 @@
             </div>
             <ul>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="index{{ route('home') }}">Home</a>
+                    <a class="nav-link {{ \Illuminate\Support\Facades\Route::is('home') ? 'active' : '' }}"
+                        aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about{{ route('home') }}">About</a>
+                    <a class="nav-link {{ \Illuminate\Support\Facades\Route::is('about') ? 'active' : '' }}"
+                        href="{{ route('about') }}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="feature{{ route('home') }}">Feature</a>
+                    <a class="nav-link {{ \Illuminate\Support\Facades\Route::is('feature') ? 'active' : '' }}"
+                        href="{{ route('feature') }}">Feature</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pricing{{ route('home') }}">Pricing</a>
+                    <a class="nav-link {{ \Illuminate\Support\Facades\Route::is('pricing') ? 'active' : '' }}"
+                        href="{{ route('pricing') }}">Pricing</a>
                 </li>
                 <li class="nav-item">
                     <div class="d-flex align-items-center justify-content-between pt-3" id="slid-btn">
